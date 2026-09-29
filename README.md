@@ -6,7 +6,7 @@
 
 GitKraken's Kepler ships an "Agent Graph", a live DAG of everything your agents do. It has first-class support for nine coding agents (Claude Code, Codex, Copilot, Cursor CLI, OpenCode, Auggie, Grok Build, Pi, Antigravity), and for anything else it exposes a **custom ACP server** slot: you give it a command, and the app spawns your agent over the [Agent Client Protocol](https://agentclientprotocol.org) (JSON-RPC over stdio), exactly like Zed or JetBrains do.
 
-I pointed that slot at **Hermes Agent** (`hermes-acp`), gave one Hermes session a lead prompt, and let it split a small objective into three parallel workstreams: creating child Kepler tasks, isolated git worktrees, and fresh agent sessions *through Kepler's own MCP tools*. The three workstreams built separate modules, committed to their own branches; the lead then merged them, fixed the seams, and a combined test suite went green end to end.
+I pointed that slot at **Hermes Agent** (`hermes-acp`), gave one Hermes session a lead prompt, and let it split a small objective into three parallel workstreams: creating child Kepler tasks, isolated git worktrees, and fresh agent sessions *through Kepler's own MCP tools*, in a task repository made public here: [`alperenerol/kepler-acp-test`](https://github.com/alperenerol/kepler-acp-test). The three workstreams built separate modules, committed to their own branches; the lead then merged them, fixed the seams, and a combined test suite went green end to end.
 
 What follows is the setup, the actual numbers, the screenshots, and the places where it broke.
 
